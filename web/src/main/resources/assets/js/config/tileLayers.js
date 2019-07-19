@@ -63,6 +63,22 @@ var osmde = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y
     attribution: osmAttr
 });
 
+var bvvWebAtlas = L.tileLayer('https://{s}.bayernwolke.de/wmts/571c128b-a811-4c6c-af85-bb43de510c45/by_webkarte/smerc/{z}/{x}/{y}', {
+    attribution: 'Webkarte Bayern, <a href="http://geodaten.bayern.de">Bayerische Vermessungsverwaltung"</a>',
+    subdomains: ['geodaten1', 'geodaten2', 'geodaten3', 'geodaten4', 'geodaten5', 'geodaten6', 'geodaten7', 'geodaten8', 'geodaten9']
+});
+
+var bvvTopoKarte = L.tileLayer('https://{s}.bayernwolke.de/wmts/571c128b-a811-4c6c-af85-bb43de510c45/by_amtl_karte/smerc/{z}/{x}/{y}', {
+    attribution: 'Topographische Karten Bayern, <a href="http://geodaten.bayern.de">Bayerische Vermessungsverwaltung"</a>',
+    subdomains: ['geodaten1', 'geodaten2', 'geodaten3', 'geodaten4', 'geodaten5', 'geodaten6', 'geodaten7', 'geodaten8', 'geodaten9']
+});
+
+
+var bvvLuftbild = L.tileLayer('https://{s}.bayernwolke.de/wmts/571c128b-a811-4c6c-af85-bb43de510c45/by_dop/smerc/{z}/{x}/{y}', {
+    attribution: 'Luftbild Bayern <a href="http://geodaten.bayern.de">Bayerische Vermessungsverwaltung"</a>',
+    subdomains: ['geodaten1', 'geodaten2', 'geodaten3', 'geodaten4', 'geodaten5', 'geodaten6', 'geodaten7', 'geodaten8', 'geodaten9']
+});
+
 var mapLink = '<a href="http://www.esri.com/">Esri</a>';
 var wholink = 'i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community';
 var esriAerial = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -71,6 +87,9 @@ var esriAerial = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/servic
 });
 
 var availableTileLayers = {
+    "Webkarte Bayern": bvvWebAtlas,
+    "Topographische Karten Bayern": bvvTopoKarte,
+    "Luftbild Bayern": bvvLuftbild,
     "Omniscale": omniscale,
     "OpenStreetMap": osm,
     "Esri Aerial": esriAerial,
